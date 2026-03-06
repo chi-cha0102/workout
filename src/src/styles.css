@@ -1,0 +1,252 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f7f1ee;
+  color: #4f4a48;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.app-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 24px;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card {
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.app-title {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.app-subtitle,
+.record-subtitle,
+.auto-save-text,
+.summary-label,
+.field-label,
+.calendar-weekdays {
+  color: #7a7270;
+}
+
+.section-title {
+  margin: 0 0 16px;
+  font-size: 22px;
+}
+
+.summary-box {
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.summary-value {
+  margin-top: 8px;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.primary-button,
+.secondary-button,
+.month-button,
+.calendar-day {
+  border: none;
+  cursor: pointer;
+}
+
+.primary-button {
+  width: 100%;
+  border-radius: 16px;
+  padding: 14px 16px;
+  background: #d8a7b1;
+  color: white;
+}
+
+.secondary-button {
+  border-radius: 16px;
+  padding: 12px 16px;
+  background: white;
+  border: 1px solid #d7c2b6;
+  color: #4f4a48;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.month-button {
+  border-radius: 14px;
+  padding: 10px 12px;
+  background: #e8d9cf;
+}
+
+.month-label {
+  font-weight: 700;
+}
+
+.calendar-weekdays,
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  text-align: center;
+}
+
+.calendar-weekdays {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.calendar-empty,
+.calendar-day {
+  aspect-ratio: 1 / 1;
+}
+
+.calendar-day {
+  position: relative;
+  border-radius: 16px;
+  background: #f7f1ee;
+  color: #4f4a48;
+  padding: 8px;
+}
+
+.calendar-day.selected {
+  background: #d8a7b1;
+  color: white;
+}
+
+.calendar-day.today {
+  border: 2px solid #d7c2b6;
+}
+
+.flower {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+}
+
+.record-title {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.exercise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.exercise-card {
+  background: #f7f1ee;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.exercise-name {
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.field-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.two-columns {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.three-columns {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.strong-label {
+  color: #4f4a48;
+  font-weight: 700;
+}
+
+.number-field,
+.memo-field {
+  width: 100%;
+  border: none;
+  border-radius: 16px;
+  background: #fffaf8;
+  color: #4f4a48;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.number-field {
+  padding: 12px 14px;
+}
+
+.memo-field {
+  min-height: 120px;
+  padding: 14px;
+  resize: vertical;
+}
+
+.bottom-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .app-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .exercise-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .three-columns {
+    grid-template-columns: 1fr;
+  }
+}
